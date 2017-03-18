@@ -102,3 +102,9 @@ const = \a b -> a
 
 length :: [element] -> Nat
 length = foldr ((+) . (const 1)) 0 
+-- length = foldr (+ . Succ) 0
+
+null :: [element] -> Bool
+
+null = foldr (const (const False)) True
+-- null = foldr (\_ _ -> False) Trues

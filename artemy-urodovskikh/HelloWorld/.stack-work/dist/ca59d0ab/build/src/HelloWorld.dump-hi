@@ -1,0 +1,51 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-18 08:27:38.617927 UTC
+
+interface helloworld-0.0.1-iyEAkzEHv4COHJm8vXNp5:HelloWorld 8002
+  interface hash: eac913dc5e9b8ec2477849019f618b44
+  ABI hash: 3c34559855561aebb3fba7f67d8a28cd
+  export-list hash: 0d53432c0dce7141bb3b580891b2e7ef
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 3668459ffb15ffd7268bce4643db1739
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  HelloWorld.greeting
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+e79e8a52729cde005142085faacf5573
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   HelloWorld.$trModule2
+                   HelloWorld.$trModule1) -}
+6010e14a238f40643276f4558c9fcc18
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "HelloWorld"#) -}
+72df4d43381057604986305261d7abc2
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "helloworld-0.0.1-iyEAkzEHv4COHJm8vXNp5"#) -}
+d624ee317a396b3102828a74824afac0
+  greeting :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Hello, Haskell!"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
