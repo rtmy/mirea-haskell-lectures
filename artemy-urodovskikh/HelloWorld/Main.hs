@@ -22,14 +22,24 @@ toTrees (path:paths) = toTree path >>= \x ->
  toTrees paths >>= \xs ->
   return(x:xs)
 
-toTree :: FilePath -> IO Tree
-toTree fp = doesDirectoryExist fp >>= \isDir ->
+toTree :: FilePath -> FilePath ->IO Tree
+toTree context fp = doesDirectoryExist (context++fp) >>= \isDir ->
   case isDir of
   	True -> 
-  	 listDirectory fp >>= \list -> 
-  	 toTrees list >>= \x ->
+  	 -- putStrLn
+  	 listDirectory (context++fp) >>= \list -> 
+  	 toTrees (context++fp+"/") list >>= \x ->
   	 return (Directory fp x)
   	False -> return (File fp)
 
+prettyPrint' :: Int -> Tree -> String
+prettyPrint' i (File fp) = replicate i ' ' ++ fp
+prettyPrint' i (Directory fp trees)
+ = replicate i ' ' ++ fp ++ "/" ++ "/\n"
+ ++ unlines (map (prettyPrint' (i+1)) trees) 
+
+prettyPrint :: Tree -> String
+prettyPrint = prettyPrint' 0
+
 main :: IO ()
-main = listDirectory "." >>= print
+main = toTree "./" "." >>= putStrLn . prettyPrint
